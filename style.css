@@ -1,0 +1,71 @@
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  margin-top: 8vh; 
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 253, 248, 0.3); 
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  justify-content: space-between;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+
+.logo img {
+  width: 110px;
+  margin-left: 8vh;
+}
+
+header nav {
+  margin-right: 8vh;
+  cursor: pointer;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.page-background {
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.650), rgba(0, 0, 0, 0.650)),
+    url('imgs/flowershopbackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex; 
+}
+
+ h1{
+    font-size: 60px;
+    color: bisque;
+  }
+ h2{
+    font-size: 25px;
+    color: bisque;
+  }
+
+  .text-main{
+    margin-top: 40vh;
+    margin-left: 20vh;
+  }
+
+  .imgPeonies-main{
+    margin-top: 20vh;
+  }
+
+
