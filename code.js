@@ -1,45 +1,58 @@
-// 1. Отримуємо посилання на елементи HTML
 const bouquetImage = document.getElementById('bouquetImage');
 const nextBouquetBtn = document.getElementById('nextBouquetBtn');
 
-// 2. Створюємо масив з шляхами до всіх букетів
-// !!! ВАЖЛИВО: Заміни 'imgs/peonies.png' та інші на РЕАЛЬНІ шляхи до твоїх зображень
-// Переконайся, що 'imgs/pinkP.png' - це дійсно шлях до твоїх півоній.
 const bouquetSources = [
     'imgs/pinkP.png', 
     'imgs/photo_2025-06-01_17-05-06-removebg-preview.png',
     'imgs/avasflowers-white-lily-bouquet-farm-fresh-15-blooms-with-vase-15481-removebg-preview.png',
-    'imgs/photo_2025-06-01_17-07-02-removebg-preview.png',
+    'imgs/tulips.png',
     'imgs/photo_2025-06-01_17-07-04-removebg-preview.png'
 ];
 
-// 3. Змінна для відстеження поточного букета
-let currentBouquetIndex = 0; // Починаємо з першого букета (півонії)
+let currentBouquetIndex = 0; 
 
-// 4. Функція, яка буде виконуватися при натисканні кнопки
 function showNextBouquet() {
-    // Збільшуємо індекс для переходу до наступного букета
     currentBouquetIndex++;
-
-    // Якщо індекс вийшов за межі масиву, повертаємо його до 0 (півонії)
     if (currentBouquetIndex >= bouquetSources.length) {
         currentBouquetIndex = 0;
     }
 
-    // Додаємо плавний перехід (тимчасово робимо прозорим, потім змінюємо src і повертаємо видимість)
     bouquetImage.style.opacity = '0';
-    bouquetImage.style.transform = 'scale(0.95)'; // Трохи зменшуємо для ефекту
+    bouquetImage.style.transform = 'scale(0.95)';
 
     setTimeout(() => {
         bouquetImage.src = bouquetSources[currentBouquetIndex];
         bouquetImage.style.opacity = '1';
         bouquetImage.style.transform = 'scale(1)';
-    }, 300); // Час має відповідати transition в CSS
+    }, 300);
 }
 
-// 5. Прив'язуємо функцію до кнопки
 nextBouquetBtn.addEventListener('click', showNextBouquet);
-
-// Опціонально: переконуємося, що початковий букет відображається при завантаженні сторінки.
-// Хоча він вже вказаний в HTML, це може бути корисно, якщо ви захочете змінити його динамічно.
 bouquetImage.src = bouquetSources[currentBouquetIndex];
+
+const popupOverlay = document.getElementById('popupOverlay');
+const closePopupBtn = document.getElementById('closePopupBtn');
+const discountButton = document.querySelector('#popupContent .popup-btn'); 
+
+function showPopup() {
+    popupOverlay.classList.add('active'); 
+}
+
+function hidePopup() {
+    popupOverlay.classList.remove('active');
+}
+
+setTimeout(showPopup, 20000);
+
+closePopupBtn.addEventListener('click', hidePopup);
+
+popupOverlay.addEventListener('click', (event) => {
+    if (event.target === popupOverlay) {
+        hidePopup();
+    }
+});
+
+discountButton.addEventListener('click', () => {
+    alert('Congratulations! Your secret code is: PETALIA21');
+    hidePopup();
+});

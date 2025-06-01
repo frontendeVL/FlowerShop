@@ -18,7 +18,7 @@ header {
     justify-content: space-between;
     padding: 15px 0;
     box-sizing: border-box;
-    color: bisque;
+    color: rgb(117, 130, 114);
 }
 
 .logo img {
@@ -98,4 +98,111 @@ h2 {
     background-color: bisque; 
     color: #333; 
     transform: translateY(-3px); 
+}
+
+#popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; 
+    visibility: hidden; 
+    opacity: 0; 
+    transition: visibility 0.4s, opacity 0.4s ease-in-out; 
+}
+
+#popupOverlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#popupContent {
+    background-color: #fef0ed; 
+    padding: 40px 50px; 
+    border-radius: 10px; 
+    box-shadow: inset 0px 30px 95px rgba(0, 0, 0, 0.4); 
+    text-align: center;
+    width: 90%; 
+    max-width: 550px; 
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    color: #4a2a2a; 
+    transform: scale(0.9); 
+    transition: transform 0.4s ease-in-out;
+}
+
+#popupOverlay.active #popupContent {
+    transform: scale(1); 
+}
+
+#closePopupBtn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    color: #7a5c5c; 
+    cursor: pointer;
+    line-height: 20px; 
+}
+
+.popup-header h2 {
+    font-size: 38px;
+    margin-bottom: 5px;
+    text-transform: uppercase; 
+    color: #4a2a2a;
+}
+
+.popup-header h3 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 400; 
+    color: #8c5b5b;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.popup-text {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: #6a4a4a;
+}
+
+.popup-btn {
+    background-color: #efbbd8; 
+    color: #4a2a2a; 
+    border: none;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.popup-btn:hover {
+    background-color: #c0a08e; 
+    transform: translateY(-2px); 
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-footer {
+    font-size: 16px;
+    margin-top: 30px;
+    color: #412929;
+    font-style: italic;
+}
+
+.discount{
+  color: #623939;
+  font-size: 25px;
 }
