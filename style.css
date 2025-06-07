@@ -217,7 +217,7 @@ h2 {
 }
 
 .flower-cards{
-    margin-top: 25%;
+    margin-top: 5%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -259,7 +259,7 @@ h2 {
 .card-content button{
     border: none;
     padding: 13px 30px;
-    background-color: #816a63;
+    background-color: #916557;
     border-radius: 7px;
     cursor: pointer;
     font-size: 18px;
@@ -269,11 +269,31 @@ h2 {
 }
 
 .card-content button:hover{
-    background-color: #7c9f73;
+    background-color: #b48c80;
 }
 
 .priceB{
     margin-top: 40px;
     font-weight: 600;
+}
+
+.section-divider {
+    text-align: center;
+    padding: 80px 20px; 
+    background: linear-gradient(to top, #faf0d6, #faeedb); 
+}
+
+.section-divider h2 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 50px; 
+    color: #333333; 
+    margin-bottom: 5px; 
+}
+
+.section-divider p {
+    font-size: 25px; 
+    color: #333333; 
+    max-width: 700px; 
+    margin: 0 auto; 
 }
 
